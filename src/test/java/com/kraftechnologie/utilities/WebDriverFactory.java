@@ -21,6 +21,7 @@ public class WebDriverFactory {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 driver =new ChromeDriver();
+
                 break;
             case "safari":
                 WebDriverManager.safaridriver().setup();
@@ -35,6 +36,7 @@ public class WebDriverFactory {
                 driver=new EdgeDriver();
                 break;
         }
+        driver.manage().window().maximize();
         return driver;
     }
 
