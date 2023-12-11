@@ -15,7 +15,7 @@ public class CSS_with_FollowingSibling {
         // css with following sibling   xpath=> //form/div/following-sibling::div/input
         driver.findElement(By.cssSelector("form>div~div>input")).sendKeys("mike1234");
         // form>div~div~div~div>button
-        driver.findElement(By.cssSelector("[method='post']>[class='col-12']~div>button")).click();
+            driver.findElement(By.cssSelector("[method='post']>[class='col-12']~div>button")).click();
         Thread.sleep(2000);
         driver.close();
     }
