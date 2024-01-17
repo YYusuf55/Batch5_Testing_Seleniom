@@ -50,4 +50,38 @@ public class FileUpload {
         WebElement verificationPoint=driver.findElement(By.cssSelector("#uploaded-files"));
         Assert.assertTrue(verificationPoint.getText().contains("test.txt"));
     }
+
+    @Test
+    public void test2() {
+
+        /**
+
+         create a file on your Desktop named "Selenium.txt"
+         move this folder into resources file
+         go to https://the-internet.herokuapp.com/upload
+         upload the file and validate*/
+        driver.get("https://the-internet.herokuapp.com/upload");
+        WebElement chooseFile=driver.findElement(By.cssSelector("#file-upload"));
+
+        System.out.println("System.getProperty(\"user.dir\") = " + System.getProperty("user.dir"));
+        System.out.println("System.getProperty(\"os.name\") = " + System.getProperty("os.name"));
+
+        String projectPath=System.getProperty("user.dir");
+        String filePath="src/test/resources/Selenium.txt";
+        String fullPath=projectPath+"/"+filePath;
+
+        //upload txt file
+        chooseFile.sendKeys(fullPath);
+
+        //locate and click on upload file
+        WebElement uploadButton= driver.findElement(By.cssSelector("#file-submit"));
+        uploadButton.click();
+
+        WebElement verificationPoint=driver.findElement(By.cssSelector("#uploaded-files"));
+        Assert.assertTrue(verificationPoint.getText().contains("Selenium.txt"));
+
+
+
+
+    }
 }

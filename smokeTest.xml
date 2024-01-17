@@ -1,0 +1,84 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--How to run specific package-->
+<!--
+<suite name="Kraftech Automation " verbose="1">
+    <test name="smoke Test">
+        <packages>
+            <package name="com.kraftechnologie.tests.day15_POM1"></package>
+        </packages>
+    </test>
+</suite>
+-->
+<!--How to run more than one package-->
+<!--
+<suite name="Kraftech Automation " verbose="1">
+<test name="smoke Test">
+    <packages>
+        <package name="com.kraftechnologie.tests.day15_POM1"></package>
+        <package name="com.kraftechnologie.tests.day16_POM2"></package>
+    </packages>
+</test>
+</suite>
+-->
+
+<!--How to run all package-->
+<!--
+<suite name="Kraftech Automation " verbose="1">
+<test name="smoke Test">
+    <packages>
+        <package name="com.kraftechnologie.tests.*"></package>
+
+    </packages>
+</test>
+</suite>
+-->
+<!--How to run specific class-->
+<!--
+<suite name="Kraftech Automation " verbose="1">
+    <test name="smoke Test">
+        <classes>
+            <class name="com.kraftechnologie.tests.day15_POM1.NegativeLoginTest"></class>
+        </classes>
+    </test>
+</suite>
+-->
+<!--How to run more than one class-->
+<!--
+<suite name="Kraftech Automation " verbose="1">
+    <test name="smoke Test">
+        <classes>
+            <class name="com.kraftechnologie.tests.day15_POM1.NegativeLoginTest"></class>
+            <class name="com.kraftechnologie.tests.day14_properties_Singleton.LoginTest"></class>
+        </classes>
+    </test>
+</suite>
+-->
+<!--How to run specific test in the class-->
+<!--
+<suite name="Kraftech Automation " verbose="1">
+    <test name="smoke Test">
+        <classes>
+            <class name="com.kraftechnologie.tests.day14_properties_Singleton.LoginTest">
+                <methods>
+                    <include name="t_anotherLoginTest"></include>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
+-->
+<!--How to run all test cases in one class without one -->
+<suite name="Kraftech Automation " verbose="1">
+    <test name="smoke Test">
+        <classes>
+            <class name="com.kraftechnologie.tests.day13_webtables.WebTables">
+                <methods>
+                    <exclude name="getAllHeaders"></exclude>
+                    <exclude name="printTableSize"></exclude>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
